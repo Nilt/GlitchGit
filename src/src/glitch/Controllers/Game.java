@@ -20,6 +20,8 @@ import javax.swing.JFrame;
 
 public class Game extends Canvas implements Runnable, KeyListener {
 
+	// Versjon 0.0.1
+	
 	public static final String TITLE = "Glitch";
 
 	public static final int WIDTH = 606;  //598
