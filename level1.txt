@@ -1,0 +1,24 @@
+BG2.png
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+                                D    GG 
+                                D   FGG
+GGGGGGGGGGGGGGG          GGGGGGGGGGGGGG
+                                       
+                                      
+                                       
+                                       
+                                       
+                                       
+GGGGGGGGGGGGG                        GG  
+GG                                   GG  
+GG                                  BGG
+GGK    G                             GG
+GG     G                             GG
+GG     G                  S          GG
+GG     G               GGGGGGGGGGG   GG
+       G                               
+       G            P                  
+GGGGGGGG        GGGGGGGG             GG 
+GG                                   GG
+GG                                   GG
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
