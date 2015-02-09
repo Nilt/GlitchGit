@@ -13,7 +13,9 @@ public class Door extends GroundObject{
 	private Level level;
 	
 	// Image
-	private String imageFile = "laserDoor.png";
+	//private String imageFile = "laserDoor.png";
+	private String imageFile = "Assets/Images/LevelObjects/laser10.png";
+	
 	private SpriteSheet sprite;
 	private int index; // Decides which image to load
 	private int speed;
@@ -30,9 +32,9 @@ public class Door extends GroundObject{
 
 	public void tick() {
 		speed++;
-		if(speed % 10 == 0) {
+		if(speed % 5 == 0) {
 		index++;
-		if(index >= 7) {
+		if(index >= 3) {
 			index = 0;
 		}
 		}

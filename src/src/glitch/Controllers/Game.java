@@ -34,7 +34,13 @@ public class Game extends Canvas implements Runnable, KeyListener {
 	public static boolean recording;
 	BufferedImage recordImage[];
 	public int recordIndex;
+	
+	// Noise filter
+	private static BufferedImage[] noiseImageFilter;
+	private static int noiseImageFilterCounter = 0;
+	private static int noiseImageFilterRate = 0;
 
+	// Keyboard variables
 	private static boolean left, right, up, down, enter, s, space, shift;
 
 	//private Level level1;
@@ -57,10 +63,16 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		recordIndex = 0;
 		recording = false;
 		recordImage = new BufferedImage[3];
+		noiseImageFilter = new BufferedImage[3];
 		try {
 			recordImage[0] = ImageIO.read(new File("RecT_2.png"));
 			recordImage[1] = ImageIO.read(new File("RecT_3.png"));
 			recordImage[2] = ImageIO.read(new File("RecT_4.png"));
+			
+			for(int i = 0 ; i< noiseImageFilter.length; i++) {
+				noiseImageFilter[i] = ImageIO.read(new File("Assets/Images/NoiseFilter/noisefilter" + (i + 1) + ".png"));
+			}
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -115,6 +127,7 @@ public class Game extends Canvas implements Runnable, KeyListener {
 				g.fillRect(0, 0, WIDTH, HEIGHT);
 				g.drawImage(recordImage[getIndex()],0,0,null);
 			}
+			renderNoiseFilter(g);
 			break;
 		case "paused":
 				gc.render(g);
@@ -130,6 +143,18 @@ public class Game extends Canvas implements Runnable, KeyListener {
 		// ////
 		g.dispose();
 		bs.show();
+	}
+	
+	public void renderNoiseFilter(Graphics g) {
+		noiseImageFilterRate++;
+		if(noiseImageFilterRate > 400) { // 777
+			noiseImageFilterCounter++;
+			noiseImageFilterRate = 0;
+			
+		}
+		if(noiseImageFilterCounter > 2) noiseImageFilterCounter = 0;
+		g.drawImage(noiseImageFilter[noiseImageFilterCounter], 0, 0, null);
+		
 	}
 
 	public void run() {

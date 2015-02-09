@@ -41,12 +41,14 @@ public class LevelGenerator {
 		willRain = false;
 
 		try {
-			tileSet = ImageIO.read(new File("TileSet4_3.png"));
+			tileSet = ImageIO.read(new File("tiles5.png"));
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println("tileWidth: " + tileSet.getWidth() / 16);
+		System.out.println("tileWidth: " + tileSet.getHeight() / 16);
 		tiles = new BufferedImage[tileSet.getWidth() / 16][tileSet.getHeight() / 16];
 		for (int i = 0; i < tiles.length; i++) {
 			for (int j = 0; j < tiles[i].length; j++) {
